@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaSearchengin } from "react-icons/fa";
+import ThemeSwitch from "../others/ThemeSwitch";
 
 const Navbar = () => {
   return (
@@ -19,8 +20,9 @@ const Navbar = () => {
         <Link to="blogs">Blogs</Link>
       </div>
       {/* Search bar */}
-      <div>
-        <FaSearchengin className="btn btn-ghost" />
+      <div className="flex justify-center items-center gap-4">
+        <FaSearchengin />
+        <ThemeSwitch />
       </div>
     </div>
   );
