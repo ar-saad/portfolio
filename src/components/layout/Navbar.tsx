@@ -10,7 +10,7 @@ import ThemeSwitch from "../others/ThemeSwitch";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between gap-10 my-3">
+    <div className="max-w-[1400px] w-full mx-auto flex justify-between gap-10 my-3">
       {/* Logo */}
       <div>
         <h1 className="text-3xl font-bold title-font">

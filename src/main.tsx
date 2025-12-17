@@ -7,7 +7,7 @@ import { ThemeProvider } from "./components/others/ThemeProvider";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <div className="max-w-[1400px] w-full mx-auto">
+      <div>
         <Routes />
       </div>
     </ThemeProvider>
