@@ -7,7 +7,7 @@ import gitHubLogoWhite from "../../assets/github-mark-white.png";
 import gitHubLogoBlack from "../../assets/github-mark.png";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
-import CodeBlock from "@/components/ui/codeBlock";
+import CodeBlock from "@/components/ui/CodeBlock";
 
 const AnimatedTitles = ({
   titles,
@@ -59,8 +59,8 @@ const codeString = `const profile = {
   skills: [
     "React.js", "JavaScript", "TypeScript", "Tailwind CSS", "DaisyUI", "Shadcn", 
     "Node.js", "Express.js", "MongoDB", "Mongoose", "NeonDB", "PostgreSQL", "Git",
-    "GitHub", "Nginx", "VPS Deployment", "Firebase", "Vercel", "Netlify", "JWT Auth",
-  ]
+    "GitHub", "Nginx", "VPS Deployment", "Firebase", "Vercel", "Netlify", "JWT Auth"
+  ],
   hardWorker: true,
   quickLearner: true,
   problemSolver: true,

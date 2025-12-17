@@ -7,7 +7,6 @@ import {
   FaBriefcase,
 } from "react-icons/fa";
 import ThemeSwitch from "../others/ThemeSwitch";
-import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
@@ -22,7 +21,7 @@ const Navbar = () => {
       {/* Nav Links */}
       <div className="mx-auto flex items-center justify-center">
         <div className="w-full rounded-full bg-gradient-to-r from-cyan-500/70 to-blue-500/70 p-0.5">
-          <div className="flex h-full w-full items-center justify-center bg-black/80 rounded-full">
+          <div className="flex h-full w-full items-center justify-center dark:bg-black/80 light:bg-gray-100/80 rounded-full">
             <h1 className="px-5 py-2 flex gap-8">
               <Link to="/home" className="flex items-center gap-2">
                 <FaHome /> Home
