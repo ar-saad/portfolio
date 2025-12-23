@@ -1,16 +1,10 @@
 import { Link } from "react-router-dom";
-import {
-  FaHome,
-  FaCode,
-  FaLaptopCode,
-  FaInbox,
-  FaBriefcase,
-} from "react-icons/fa";
+import { FaHome, FaLaptopCode, FaInbox, FaBriefcase } from "react-icons/fa";
 import ThemeSwitch from "../others/ThemeSwitch";
 
 const Navbar = () => {
   return (
-    <div className="max-w-[1400px] w-full mx-auto flex justify-between gap-10 my-3">
+    <div className="max-w-[1400px] w-full mx-auto flex justify-between gap-10 my-3 sticky top-3 z-10">
       {/* Logo */}
       <div>
         <h1 className="text-3xl font-bold title-font">
@@ -23,12 +17,12 @@ const Navbar = () => {
         <div className="w-full rounded-full bg-gradient-to-r from-cyan-500/70 to-blue-500/70 p-0.5">
           <div className="flex h-full w-full items-center justify-center dark:bg-black/80 light:bg-gray-100/80 rounded-full">
             <h1 className="px-5 py-2 flex gap-8">
-              <Link to="/home" className="flex items-center gap-2">
+              <a href="#banner-section" className="flex items-center gap-2">
                 <FaHome /> Home
-              </Link>
-              <Link to="/skills" className="flex items-center gap-2">
-                <FaCode /> Skills
-              </Link>
+              </a>
+              <a href="#about-section" className="flex items-center gap-2">
+                <FaHome /> About
+              </a>
               <Link to="/projects" className="flex items-center gap-2">
                 <FaLaptopCode /> Projects
               </Link>

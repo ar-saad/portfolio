@@ -32,7 +32,7 @@ const AnimatedTitles = ({
   const title = titles[index];
 
   return (
-    <h2 className="text-3xl font-medium title-font my-5 border rounded-lg bg-gradient-to-r from-cyan-500/30 to-blue-500/30 w-full max-w-[275px] px-3 py-2 text-center">
+    <h2 className="text-3xl font-medium title-font my-5 border rounded-lg bg-gradient-to-r from-cyan-500/30 to-blue-500/30 w-full max-w-[360px] px-3 py-2 text-center">
       <span className="inline-block mr-2 opacity-0" aria-hidden />
       <span key={index} className="inline-block" aria-label={title} role="text">
         {Array.from(title).map((ch, i) => {
@@ -83,6 +83,7 @@ const Banner = () => {
     <div>
       {/* Grid + vignette background */}
       <div
+        id="banner-section"
         className="
             absolute inset-0 -z-10
             bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
@@ -117,7 +118,7 @@ const Banner = () => {
             <AnimatedTitles
               titles={[
                 "Full-stack Developer",
-                "UI/UX Enthusiast",
+                "Backend Systems Builder",
                 "Problem Solver",
               ]}
               letterDelay={45}
