@@ -31,12 +31,12 @@ const About = () => {
       id="about-section"
     >
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(34,197,94,0.08),transparent_25%)]" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01)),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_100%,36px_36px,36px_36px]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01)),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[100%_100%,36px_36px,36px_36px]" />
 
       <div className="max-w-[1200px] w-full mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-10">
         <div className="space-y-6">
           <div className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium">
-            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 animate-pulse" />
             About Me
           </div>
 
@@ -46,14 +46,14 @@ const About = () => {
               work behind the scenes
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I’m a full-stack developer who ships clean, scalable, and
+              I'm a full-stack developer who ships clean, scalable, and
               user-centric web apps. In my final BSc year in Physics, I balance
               academic rigor with hands-on work as a part-time Junior Software
               Developer—applying analytical thinking to real-world products.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               My strength lies across the MERN stack with a UI/UX-first mindset.
-              I’ve built dashboards, role-based systems, and admin experiences
+              I've built dashboards, role-based systems, and admin experiences
               for products like StartupBase, My3DPrinter, Smart School Bus,
               Alumni Connect, and SchoolCab—always caring about usability,
               performance, and maintainability.
@@ -61,7 +61,7 @@ const About = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               Currently deepening TypeScript, Next.js, PostgreSQL, Mongoose, and
               advanced backend patterns while sharpening problem-solving through
-              regular practice. I’m curious, growth-oriented, and motivated to
+              regular practice. I'm curious, growth-oriented, and motivated to
               build products that are technically solid and thoughtfully
               designed.
             </p>
@@ -81,7 +81,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-5 backdrop-blur">
+          <div className="rounded-2xl border border-white/10 bg-linear-to-r from-cyan-500/10 to-blue-500/10 p-5 backdrop-blur">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm uppercase tracking-[0.16em] text-gray-500">
@@ -107,10 +107,10 @@ const About = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-cyan-500/25 via-blue-500/20 to-green-500/15 blur-3xl" />
+          <div className="absolute -inset-4 -z-10 rounded-3xl bg-linear-to-br from-cyan-500/25 via-blue-500/20 to-green-500/15 blur-3xl" />
           <div className="rounded-3xl border border-white/10 bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-2xl overflow-hidden">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/15 via-transparent to-blue-500/10" />
+              <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/15 via-transparent to-blue-500/10" />
               <img
                 src={profile}
                 alt="Profile"

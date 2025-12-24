@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaLaptopCode, FaInbox, FaBriefcase } from "react-icons/fa";
+import {
+  FaHome,
+  FaLaptopCode,
+  FaInbox,
+  FaBriefcase,
+  FaCode,
+} from "react-icons/fa";
 import ThemeSwitch from "../others/ThemeSwitch";
 
 const Navbar = () => {
@@ -14,14 +20,17 @@ const Navbar = () => {
       </div>
       {/* Nav Links */}
       <div className="mx-auto flex items-center justify-center">
-        <div className="w-full rounded-full bg-gradient-to-r from-cyan-500/70 to-blue-500/70 p-0.5">
+        <div className="w-full rounded-full bg-linear-to-r from-cyan-500/70 to-blue-500/70 p-0.5">
           <div className="flex h-full w-full items-center justify-center dark:bg-black/80 light:bg-gray-100/80 rounded-full">
             <h1 className="px-5 py-2 flex gap-8">
               <a href="#banner-section" className="flex items-center gap-2">
                 <FaHome /> Home
               </a>
               <a href="#about-section" className="flex items-center gap-2">
-                <FaHome /> About
+                <FaInbox /> About
+              </a>
+              <a href="#skills-section" className="flex items-center gap-2">
+                <FaCode /> Skills
               </a>
               <Link to="/projects" className="flex items-center gap-2">
                 <FaLaptopCode /> Projects

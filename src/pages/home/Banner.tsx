@@ -32,7 +32,7 @@ const AnimatedTitles = ({
   const title = titles[index];
 
   return (
-    <h2 className="text-3xl font-medium title-font my-5 border rounded-lg bg-gradient-to-r from-cyan-500/30 to-blue-500/30 w-full max-w-[360px] px-3 py-2 text-center">
+    <h2 className="text-3xl font-medium title-font my-5 border rounded-lg bg-linear-to-r from-cyan-500/30 to-blue-500/30 w-full max-w-[360px] px-3 py-2 text-center">
       <span className="inline-block mr-2 opacity-0" aria-hidden />
       <span key={index} className="inline-block" aria-label={title} role="text">
         {Array.from(title).map((ch, i) => {
@@ -87,7 +87,7 @@ const Banner = () => {
         className="
             absolute inset-0 -z-10
             bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
-            bg-[size:40px_40px]
+            bg-size-[40px_40px]
           "
       />
 
@@ -100,7 +100,7 @@ const Banner = () => {
       />
       <div className="max-w-[1400px] w-full mx-auto h-[calc(100vh-68px)] flex justify-between items-center relative">
         {/* Background Glow */}
-        <div className="absolute left-1/6 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 rounded-full blur-[130px] opacity-30 -z-10" />
+        <div className="absolute left-1/6 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-linear-to-r from-cyan-500 via-blue-500 to-green-500 rounded-full blur-[130px] opacity-30 -z-10" />
 
         <div className="max-w-[600px]">
           <div>
@@ -110,7 +110,7 @@ const Banner = () => {
                 👋
               </span>
               <br />I am{" "}
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
+              <span className="bg-linear-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
                 Abdur Rahman Saad
               </span>
             </h1>
