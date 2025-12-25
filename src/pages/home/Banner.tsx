@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useTheme } from "@/components/others/ThemeProvider";
 import xLogoWhite from "../../assets/x-logo-white.png";
 import xLogoBlack from "../../assets/x-logo-black.png";
@@ -8,58 +7,16 @@ import gitHubLogoBlack from "../../assets/github-mark.png";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 import CodeBlock from "@/components/ui/CodeBlock";
-
-const AnimatedTitles = ({
-  titles,
-  letterDelay = 50,
-  hold = 1200,
-}: {
-  titles: string[];
-  letterDelay?: number;
-  hold?: number;
-}) => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const currentLen = titles[index].length;
-    const duration = currentLen * letterDelay + hold;
-    const t = setTimeout(() => {
-      setIndex((i) => (i + 1) % titles.length);
-    }, duration);
-    return () => clearTimeout(t);
-  }, [index, titles, letterDelay, hold]);
-
-  const title = titles[index];
-
-  return (
-    <h2 className="text-3xl font-medium title-font my-5 border rounded-lg bg-linear-to-r from-cyan-500/30 to-blue-500/30 w-full max-w-[360px] px-3 py-2 text-center">
-      <span className="inline-block mr-2 opacity-0" aria-hidden />
-      <span key={index} className="inline-block" aria-label={title} role="text">
-        {Array.from(title).map((ch, i) => {
-          const isSpace = ch === " ";
-          return (
-            <span
-              key={i}
-              className={`letter ${isSpace ? "letter-space" : ""}`}
-              style={{ animationDelay: `${i * letterDelay}ms` }}
-              aria-hidden={isSpace}
-            >
-              {isSpace ? "\u00A0" : ch}
-            </span>
-          );
-        })}
-      </span>
-    </h2>
-  );
-};
+import AnimatedTitles from "@/components/ui/AnimatedTitles";
 
 const codeString = `const profile = {
   name: "Abdur Rahman Saad",
   title: "Full-Stack Developer",
   skills: [
-    "React.js", "JavaScript", "TypeScript", "Tailwind CSS", "DaisyUI", "Shadcn", 
-    "Node.js", "Express.js", "MongoDB", "Mongoose", "NeonDB", "PostgreSQL", "Git",
-    "GitHub", "Nginx", "VPS Deployment", "Firebase", "Vercel", "Netlify", "JWT Auth"
+    "React.js", "JavaScript", "TypeScript", "Tailwind CSS", "DaisyUI", 
+    "Shadcn", "Node.js", "Express.js", "MongoDB", "Mongoose", "NeonDB", 
+    "PostgreSQL", "Git", "GitHub", "Nginx", "VPS Deployment", "Firebase", 
+    "Vercel", "Netlify", "JWT Auth"
   ],
   hardWorker: true,
   quickLearner: true,
@@ -86,7 +43,8 @@ const Banner = () => {
         id="banner-section"
         className="
             absolute inset-0 -z-10
-            bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
+            dark:bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
+            light:bg-[linear-gradient(rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.06)_1px,transparent_1px)]
             bg-size-[40px_40px]
           "
       />
@@ -95,16 +53,17 @@ const Banner = () => {
       <div
         className="
           absolute inset-0 -z-10
-          bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.65)_70%)]
+          dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.65)_70%)]
+          light:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.4)_70%)]
         "
       />
-      <div className="max-w-[1400px] w-full mx-auto h-[calc(100vh-68px)] flex justify-between items-center relative">
+      <div className="max-w-[1400px] w-full mx-auto min-h-[calc(100vh-68px)] grid grid-cols-1 md:grid-cols-2 items-center relative p-4 md:p-5 gap-6 md:gap-10 pb-12 md:pb-5">
         {/* Background Glow */}
         <div className="absolute left-1/6 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-linear-to-r from-cyan-500 via-blue-500 to-green-500 rounded-full blur-[130px] opacity-30 -z-10" />
 
-        <div className="max-w-[600px]">
+        <div className="w-full max-w-[600px] order-2 md:order-1">
           <div>
-            <h1 className="text-6xl font-medium mb-2 title-font">
+            <h1 className="text-3xl md:text-3xl lg:text-6xl font-medium mb-2 title-font">
               Hello
               <span className="inline-block ml-2 shake-hand" aria-hidden>
                 👋
@@ -125,14 +84,14 @@ const Banner = () => {
               hold={1200}
             />
 
-            <h4 className="text-gray-400 text-lg my-3">
+            <h4 className="text-gray-600 dark:text-gray-400 text-lg my-3">
               I build scalable, user‑focused web applications with a strong
               emphasis on clean design, maintainable architecture, and
               real-world problem solving.
             </h4>
           </div>
 
-          <div className="flex gap-7 mt-5 text-xl">
+          <div className="flex gap-7 my-5 text-xl">
             <Button variant="secondary" className="h-10">
               Let's Connect <FaArrowRight />
             </Button>
@@ -169,7 +128,7 @@ const Banner = () => {
         </div>
 
         {/* Right Code Block */}
-        <div>
+        <div className="w-full order-1 md:order-2 flex justify-center md:justify-end">
           <CodeBlock code={codeString} />
         </div>
       </div>

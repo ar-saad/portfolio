@@ -27,11 +27,11 @@ const coreStack = [
 const About = () => {
   return (
     <section
-      className="relative isolate overflow-hidden py-20"
+      className="relative isolate overflow-hidden py-12 md:py-20"
       id="about-section"
     >
+      {/* Background gradients */}
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(34,197,94,0.08),transparent_25%)]" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01)),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[100%_100%,36px_36px,36px_36px]" />
 
       <div className="max-w-[1200px] w-full mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-10">
         <div className="space-y-6">
@@ -89,7 +89,7 @@ const About = () => {
                 </p>
                 <h3 className="text-xl font-semibold">What I optimize for</h3>
               </div>
-              <span className="hidden sm:inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+              <span className="hidden sm:inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-semibold light:text-gray-500 dark:text-cyan-200">
                 Product-minded engineer
               </span>
             </div>
