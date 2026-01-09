@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/others/ThemeProvider";
+import { useTheme } from "@/components/ThemeSwitch/ThemeProvider";
 import xLogoWhite from "../../assets/x-logo-white.png";
 import xLogoBlack from "../../assets/x-logo-black.png";
 import facebookLogoWhite from "../../assets/Facebook_Logo_Primary.png";

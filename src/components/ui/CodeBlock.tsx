@@ -3,7 +3,7 @@ import {
   atomDark,
   oneLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useTheme } from "../others/ThemeProvider";
+import { useTheme } from "../ThemeSwitch/ThemeProvider";
 
 const CodeBlock = ({ code }: { code: string }) => {
   const { theme } = useTheme();

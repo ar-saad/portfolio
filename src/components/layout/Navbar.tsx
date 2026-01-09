@@ -8,7 +8,7 @@ import {
   FaBriefcase,
   FaCode,
 } from "react-icons/fa";
-import ThemeSwitch from "../others/ThemeSwitch";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
