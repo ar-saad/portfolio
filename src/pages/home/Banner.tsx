@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 import CodeBlock from "@/components/ui/CodeBlock";
 import AnimatedTitles from "@/components/ui/AnimatedTitles";
+import { motion } from "motion/react";
 
 const codeString = `const profile = {
   name: "Abdur Rahman Saad",
@@ -65,9 +66,22 @@ const Banner = () => {
           <div>
             <h1 className="text-3xl md:text-3xl lg:text-6xl font-medium mb-2 title-font">
               Hello
-              <span className="inline-block ml-2 shake-hand" aria-hidden>
+              <motion.span
+                className="inline-block ml-2"
+                style={{ transformOrigin: "70% 70%" }}
+                animate={{
+                  rotate: [0, 14, -8, 14, -4, 10, 0, 0],
+                }}
+                transition={{
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1],
+                  repeat: Infinity,
+                }}
+                aria-hidden
+              >
                 👋
-              </span>
+              </motion.span>
               <br />I am{" "}
               <span className="bg-linear-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
                 Abdur Rahman Saad

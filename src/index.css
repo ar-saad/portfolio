@@ -129,40 +129,6 @@ body {
   }
 }
 
-/* Own Styles */
-/* Hand shake */
-.shake-hand {
-  display: inline-block;
-  transform-origin: 70% 70%;
-  animation: shake 1200ms ease-in-out infinite;
-}
-@keyframes shake {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 /* Letter appearance */
 .letter {
   display: inline-block;
