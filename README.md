@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing my work as a full-stack develo
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices
 - **Dark/Light Theme**: Toggle between themes with persistent preference
 - **Modern UI**: Built with Shadcn UI components and Tailwind CSS
-- **Smooth Animations**: Interactive elements with CSS animations
+- **Smooth Animations**: Interactive elements animated with Motion - more animations to be added continuously
 - **Code Showcase**: Syntax-highlighted code blocks displaying skills and experience
 - **Mobile Navigation**: Hamburger menu for mobile devices
 - **Performance Optimized**: Fast loading with Vite build tool
@@ -26,6 +26,7 @@ A modern, responsive portfolio website showcasing my work as a full-stack develo
 
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **Shadcn UI** - High-quality component library
+- **Motion** - Animation library for smooth, declarative animations
 - **Lucide React** - Icon library
 - **React Icons** - Additional icons
 
@@ -126,10 +127,15 @@ Syntax-highlighted code display component.
 - GitHub: [@ar-saad](https://github.com/ar-saad)
 - Facebook: [arsaad00](https://www.facebook.com/arsaad00/)
 
+## 💡 Development Approach
+
+This project was built with the assistance of generative AI tools (Cursor) as part of the development workflow. All generated code was reviewed, adapted, and integrated deliberately, with a focus on clarity, maintainability, and full understanding of the codebase.
+
 ## 🙏 Acknowledgments
 
 - [Shadcn UI](https://ui.shadcn.com/) for beautiful components
 - [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [Motion](https://motion.dev/) for powerful animation capabilities
 - [Vite](https://vitejs.dev/) for the excellent build tooling
 - [React Router](https://reactrouter.com/) for routing
 
