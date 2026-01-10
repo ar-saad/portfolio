@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, responsive portfolio website showcasing my work as a full-stack developer. Built with React, TypeScript, and Tailwind CSS, featuring a clean design with dark/light theme support and smooth animations.
+A modern, responsive portfolio website showcasing my work and experience as a full-stack developer, with a strong focus on clean UI/UX, performance, and maintainability.
 
 🌐 **Live Site**: [https://ar-saad.vercel.app/](https://ar-saad.vercel.app/)
 
@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing my work as a full-stack develo
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices
 - **Dark/Light Theme**: Toggle between themes with persistent preference
 - **Modern UI**: Built with Shadcn UI components and Tailwind CSS
-- **Smooth Animations**: Interactive elements animated with Motion - more animations to be added continuously
+- **Smooth Animations**: Subtle, declarative animations powered by Motion
 - **Code Showcase**: Syntax-highlighted code blocks displaying skills and experience
 - **Mobile Navigation**: Hamburger menu for mobile devices
 - **Performance Optimized**: Fast loading with Vite build tool
@@ -18,7 +18,7 @@ A modern, responsive portfolio website showcasing my work as a full-stack develo
 
 ### Core
 
-- **React 19** - UI library
+- **React.js** - UI library
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
 
@@ -27,8 +27,7 @@ A modern, responsive portfolio website showcasing my work as a full-stack develo
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **Shadcn UI** - High-quality component library
 - **Motion** - Animation library for smooth, declarative animations
-- **Lucide React** - Icon library
-- **React Icons** - Additional icons
+- **Icons** - React Icons, Lucide React for icons
 
 ### Routing & State
 

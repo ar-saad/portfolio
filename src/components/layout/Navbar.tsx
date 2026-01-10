@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import {
   FaHome,
@@ -15,12 +14,17 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#banner-section", icon: FaHome, label: "Home" },
-    { href: "#about-section", icon: FaInbox, label: "About" },
-    { href: "#skills-section", icon: FaCode, label: "Skills" },
-    { to: "/projects", icon: FaLaptopCode, label: "Projects", isLink: true },
-    { to: "/projects", icon: FaBriefcase, label: "Experience", isLink: true },
-    { to: "/about", icon: FaInbox, label: "Contact", isLink: true },
+    { href: "#banner", icon: FaHome, label: "Home" },
+    { href: "#about", icon: FaInbox, label: "About" },
+    { href: "#skills", icon: FaCode, label: "Skills" },
+    { href: "#projects", icon: FaLaptopCode, label: "Projects", isLink: true },
+    {
+      href: "#experience",
+      icon: FaBriefcase,
+      label: "Experience",
+      isLink: true,
+    },
+    { href: "#contact", icon: FaInbox, label: "Contact", isLink: true },
   ];
 
   const handleNavClick = () => {
@@ -53,13 +57,13 @@ const Navbar = () => {
 
                 if (item.isLink) {
                   return (
-                    <Link
+                    <a
                       key={index}
-                      to={item.to!}
+                      href={item.href}
                       className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                     >
                       {content}
-                    </Link>
+                    </a>
                   );
                 }
                 return (
@@ -139,14 +143,14 @@ const Navbar = () => {
 
                     if (item.isLink) {
                       return (
-                        <Link
+                        <a
                           key={index}
-                          to={item.to!}
+                          href={item.href}
                           onClick={handleNavClick}
                           className="text-foreground"
                         >
                           {content}
-                        </Link>
+                        </a>
                       );
                     }
                     return (

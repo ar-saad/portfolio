@@ -28,10 +28,7 @@ const techIcons = [
 
 const Skills = () => {
   return (
-    <section
-      className="relative isolate overflow-hidden py-20"
-      id="skills-section"
-    >
+    <section className="relative isolate overflow-hidden py-20" id="skills">
       {/* Background gradients */}
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_30%,rgba(56,189,248,0.12),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.12),transparent_40%),radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.08),transparent_35%)]" />
 

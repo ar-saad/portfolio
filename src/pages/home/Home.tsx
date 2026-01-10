@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import About from "./About.tsx";
 import Skills from "./Skills.tsx";
+import Projects from "./Projects.tsx";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Banner />
       <About />
       <Skills />
+      <Projects />
     </div>
   );
 };

@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section
       className="relative isolate overflow-hidden py-12 md:py-20"
-      id="about-section"
+      id="about"
     >
       {/* Background gradients */}
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(34,197,94,0.08),transparent_25%)]" />
