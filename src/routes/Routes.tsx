@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import Home from "../pages/home/Home";
 
 const Routes = () => {
@@ -10,6 +11,7 @@ const Routes = () => {
         <div>
           <Navbar />
           <Outlet />
+          <Footer />
         </div>
       ),
       children: [
