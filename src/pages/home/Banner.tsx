@@ -1,7 +1,7 @@
 import { useTheme } from "@/components/ThemeSwitch/ThemeProvider";
 import xLogoWhite from "../../assets/x-logo-white.png";
 import xLogoBlack from "../../assets/x-logo-black.png";
-import facebookLogoWhite from "../../assets/Facebook_Logo_Primary.png";
+// import facebookLogoWhite from "../../assets/Facebook_Logo_Primary.png";
 import gitHubLogoWhite from "../../assets/github-mark-white.png";
 import gitHubLogoBlack from "../../assets/github-mark.png";
 import { Download, MessageCircle } from "lucide-react";
@@ -88,12 +88,12 @@ const Banner = () => {
       iconLight: gitHubLogoBlack,
       label: "GitHub",
     },
-    {
-      href: "https://www.facebook.com/arsaad00/",
-      iconDark: facebookLogoWhite,
-      iconLight: facebookLogoWhite,
-      label: "Facebook",
-    },
+    // {
+    //   href: "https://www.facebook.com/arsaad00/",
+    //   iconDark: facebookLogoWhite,
+    //   iconLight: facebookLogoWhite,
+    //   label: "Facebook",
+    // },
   ];
 
   return (
@@ -148,7 +148,7 @@ const Banner = () => {
                 <img
                   src={theme === "dark" ? social.iconDark : social.iconLight}
                   alt={social.label}
-                  className="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  className="w-5 h-5 transition-opacity"
                 />
               </motion.a>
             ))}
