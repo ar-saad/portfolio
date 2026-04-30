@@ -229,7 +229,7 @@ const Contact = () => {
                         value={formState.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden"
+                        className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 placeholder:text-gray-500 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden"
                       />
                     </div>
                     <div className="space-y-2">
@@ -243,7 +243,7 @@ const Contact = () => {
                         value={formState.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden"
+                        className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 placeholder:text-gray-500 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden"
                       />
                     </div>
                   </div>
@@ -258,7 +258,7 @@ const Contact = () => {
                       value={formState.subject}
                       onChange={handleChange}
                       placeholder="Project Inquiry"
-                      className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden"
+                      className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 placeholder:text-gray-500 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden"
                     />
                   </div>
                   <div className="space-y-2 flex-1 flex flex-col">
@@ -271,7 +271,7 @@ const Contact = () => {
                       value={formState.message}
                       onChange={handleChange}
                       placeholder="Tell me more about your project..."
-                      className="flex-1 w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden resize-none min-h-[150px]"
+                      className="flex-1 w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 placeholder:text-gray-500 focus:bg-white/10 focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 transition-all outline-hidden resize-none min-h-[150px]"
                     />
                   </div>
 
