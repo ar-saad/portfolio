@@ -1,4 +1,4 @@
-import { Mail, Github, Twitter, Facebook, ArrowUp } from "lucide-react";
+import { Mail, Github, Twitter, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 
