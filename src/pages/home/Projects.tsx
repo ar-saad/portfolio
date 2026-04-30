@@ -58,8 +58,19 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
         {/* Role Badge */}
-        <div className="absolute top-4 right-4">
-          <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 backdrop-blur px-3 py-1 text-xs font-medium text-white">
+        <div className="absolute top-4 right-4 z-10">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold tracking-wide shadow-lg ring-1 ${
+              project.role === "Full Stack"
+                ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white ring-cyan-400/50 shadow-cyan-500/30"
+                : "bg-gradient-to-r from-violet-500 to-purple-600 text-white ring-violet-400/50 shadow-violet-500/30"
+            }`}
+          >
+            <span
+              className={`h-1.5 w-1.5 rounded-full animate-pulse ${
+                project.role === "Full Stack" ? "bg-cyan-200" : "bg-violet-200"
+              }`}
+            />
             {project.role}
           </span>
         </div>
