@@ -5,10 +5,28 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useTheme } from "../ThemeSwitch/ThemeProvider";
 
-const CodeBlock = ({ code }: { code: string }) => {
+const codeString = `const profile = {
+  name: "Abdur Rahman Saad",
+  role: "Full-Stack Developer",
+  stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+  hardWorker: true,
+  quickLearner: true,
+  problemSolver: true,
+  hireable() {
+    return (
+      this.hardWorker &&
+      this.problemSolver &&
+      this.yearsOfExperience >= 2
+    );
+  },
+  yearsOfExperience: 2
+};
+`;
+
+const CodeBlock = () => {
   const { theme } = useTheme();
   return (
-    <div className="w-full max-w-[700px] dark:bg-[#0d1117] light:bg-[#f5f5f5] rounded-xl border dark:border-cyan-500/30 light:border-blue-700/40 shadow-lg shadow-cyan-500/10 overflow-hidden mx-auto">
+    <div className="w-full max-w-[700px] dark:bg-[#0d1117] light:bg-[#f5f5f5] rounded-2xl border dark:border-cyan-500/30 light:border-blue-700/40 shadow-lg shadow-cyan-500/10 overflow-hidden mx-auto">
       {/* Top bar (kept as is) */}
       <div className="flex items-center gap-2 px-3 md:px-4 py-2 md:py-3 dark:bg-[#0b0e12] light:bg-[#f5f5f5] border-b border-white/5">
         <span className="w-3 h-3 rounded-full bg-red-500" />
@@ -29,6 +47,7 @@ const CodeBlock = ({ code }: { code: string }) => {
         customStyle={{
           padding: "0.875rem", // Slightly reduced padding for mobile
           margin: 0,
+          borderRadius: 0,
           fontSize: theme === "dark" ? "0.9rem" : "0.8rem", // ~13px - responsive via media queries would be better but this works
           lineHeight: "1.375rem",
           backgroundColor: "transparent",
@@ -40,7 +59,7 @@ const CodeBlock = ({ code }: { code: string }) => {
 
         // 5. Code: The content to highlight
       >
-        {code}
+        {codeString}
       </SyntaxHighlighter>
     </div>
   );

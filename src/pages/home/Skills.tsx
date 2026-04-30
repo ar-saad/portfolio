@@ -1,3 +1,4 @@
+import { motion, type Variants } from "motion/react";
 import neondb from "../../assets/neon-logomark-dark-color.svg";
 import jwt from "../../assets/jwt.png";
 import nodejs from "../../assets/jsIconGreen.svg";
@@ -65,31 +66,61 @@ const skillGroups: SkillGroup[] = [
 ];
 
 const Skills = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="relative isolate overflow-hidden py-20" id="skills">
       {/* Background gradients */}
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_30%,rgba(56,189,248,0.12),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.12),transparent_40%),radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.08),transparent_35%)]" />
 
-      <div className="max-w-[1200px] w-full mx-auto px-6">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="max-w-[1200px] w-full mx-auto px-6"
+      >
         {/* Header section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium mb-6">
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium mb-6"
+          >
             <span className="h-2 w-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 animate-pulse" />
             Technical Skills
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-semibold title-font leading-tight">
+          </motion.div>
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl lg:text-5xl font-semibold title-font leading-tight"
+          >
             Technologies &amp; Tools
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto"
+          >
             A comprehensive stack of modern technologies I use to build
             scalable, performant applications
-          </p>
+          </motion.p>
         </div>
 
         {/* Grouped skill sections */}
         <div className="space-y-10">
           {skillGroups.map((group) => (
-            <div key={group.label}>
+            <motion.div variants={itemVariants} key={group.label}>
               {/* Group label */}
               <div className="flex items-center gap-3 mb-5">
                 <span
@@ -103,17 +134,19 @@ const Skills = () => {
               {/* Skills grid */}
               <div className="flex flex-wrap gap-3">
                 {group.skills.map((skill) => (
-                  <SkillCard
+                  <motion.div
                     key={skill.title}
-                    header={skill.title}
-                    img={skill.svg}
-                  />
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <SkillCard header={skill.title} img={skill.svg} />
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

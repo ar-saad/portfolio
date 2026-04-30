@@ -1,3 +1,4 @@
+import { motion, type Variants } from "motion/react";
 import profile from "../../assets/profile-picture.png";
 
 const stats = [
@@ -25,8 +26,29 @@ const coreStack = [
 ];
 
 const About = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
       className="relative isolate overflow-hidden py-12 md:py-20"
       id="about"
     >
@@ -35,41 +57,60 @@ const About = () => {
 
       <div className="max-w-[1200px] w-full mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-10">
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium">
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium"
+          >
             <span className="h-2 w-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 animate-pulse" />
             About Me
-          </div>
+          </motion.div>
 
           <div className="space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-semibold title-font leading-tight">
+            <motion.h2
+              variants={itemVariants}
+              className="text-4xl lg:text-5xl font-semibold title-font leading-tight"
+            >
               Building practical web applications with a focus on how things
               work behind the scenes
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            </motion.h2>
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
               I'm a full-stack developer who ships clean, scalable, and
               user-centric web apps. In my final BSc year in Physics, I balance
               academic rigor with hands-on work as a part-time Junior Software
               Developer—applying analytical thinking to real-world products.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
               My strength lies across the MERN stack with a UI/UX-first mindset.
               I've built dashboards, role-based systems, and admin experiences
               for products like StartupBase, My3DPrinter, Smart School Bus,
               Alumni Connect, and SchoolCab—always caring about usability,
               performance, and maintainability.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
               Currently deepening TypeScript, Next.js, PostgreSQL, Mongoose, and
               advanced backend patterns while sharpening problem-solving through
               regular practice. I'm curious, growth-oriented, and motivated to
               build products that are technically solid and thoughtfully
               designed.
-            </p>
+            </motion.p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4">
+          <motion.div
+            variants={itemVariants}
+            className="grid sm:grid-cols-3 gap-4"
+          >
             {stats.map((item) => (
-              <div
+              <motion.div
+                variants={itemVariants}
                 key={item.label}
                 className="rounded-2xl border border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur p-4 shadow-lg shadow-cyan-500/5"
               >
@@ -77,11 +118,14 @@ const About = () => {
                   {item.label}
                 </p>
                 <p className="text-xl font-semibold mt-1">{item.value}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="rounded-2xl border border-white/10 bg-linear-to-r from-cyan-500/10 to-blue-500/10 p-5 backdrop-blur">
+          <motion.div
+            variants={itemVariants}
+            className="rounded-2xl border border-white/10 bg-linear-to-r from-cyan-500/10 to-blue-500/10 p-5 backdrop-blur"
+          >
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm uppercase tracking-[0.16em] text-gray-500">
@@ -95,20 +139,25 @@ const About = () => {
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {focusAreas.map((item) => (
-                <span
+                <motion.span
+                  whileHover={{ scale: 1.05 }}
                   key={item}
-                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-gray-800 dark:text-gray-100"
+                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-gray-800 dark:text-gray-100 cursor-default"
                 >
                   {item}
-                </span>
+                </motion.span>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="relative">
+        <motion.div variants={itemVariants} className="relative">
           <div className="absolute -inset-4 -z-10 rounded-3xl bg-linear-to-br from-cyan-500/25 via-blue-500/20 to-green-500/15 blur-3xl" />
-          <div className="rounded-3xl border border-white/10 bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-2xl overflow-hidden">
+          <motion.div
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.3 }}
+            className="rounded-3xl border border-white/10 bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-2xl overflow-hidden"
+          >
             <div className="relative">
               <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/15 via-transparent to-blue-500/10" />
               <img
@@ -131,12 +180,13 @@ const About = () => {
 
               <div className="flex flex-wrap gap-2">
                 {coreStack.map((item) => (
-                  <span
+                  <motion.span
+                    whileHover={{ scale: 1.1 }}
                     key={item}
-                    className="rounded-full bg-gray-100 dark:bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200"
+                    className="rounded-full bg-gray-100 dark:bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200 cursor-default"
                   >
                     {item}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
 
@@ -158,10 +208,10 @@ const About = () => {
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

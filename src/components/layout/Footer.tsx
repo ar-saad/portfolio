@@ -1,5 +1,6 @@
 import { Mail, Github, Twitter, Facebook, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -13,7 +14,13 @@ const Footer = () => {
       {/* Background gradients */}
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_0%,rgba(34,197,94,0.05),transparent_40%)]" />
 
-      <div className="max-w-[1200px] w-full mx-auto px-6 py-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-[1200px] w-full mx-auto px-6 py-12"
+      >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo & Bio */}
           <div className="md:col-span-2">
@@ -122,7 +129,7 @@ const Footer = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 };

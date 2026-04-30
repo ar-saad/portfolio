@@ -1,4 +1,10 @@
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { motion, type Variants } from "motion/react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type ExperienceRole = {
   title: string;
@@ -102,29 +108,87 @@ const roles: ExperienceRole[] = [
 ];
 
 const Experience = () => {
+  const lineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (lineRef.current) {
+      gsap.fromTo(
+        lineRef.current,
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#experience",
+            start: "top 70%",
+            end: "bottom 80%",
+            scrub: true,
+          },
+        }
+      );
+    }
+  }, []);
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="relative isolate overflow-hidden py-20" id="experience">
       {/* Background gradients */}
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.12),transparent_40%),radial-gradient(circle_at_70%_60%,rgba(59,130,246,0.12),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(34,197,94,0.08),transparent_30%)]" />
 
-      <div className="max-w-[1200px] w-full mx-auto px-6">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="max-w-[1200px] w-full mx-auto px-6"
+      >
         {/* Header section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium mb-6">
+          <motion.div
+            variants={cardVariants}
+            className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 bg-white/5 dark:bg-white/5 backdrop-blur text-sm font-medium mb-6"
+          >
             <span className="h-2 w-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 animate-pulse" />
             Work Experience
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-semibold title-font leading-tight">
+          </motion.div>
+          <motion.h1
+            variants={cardVariants}
+            className="text-4xl lg:text-5xl font-semibold title-font leading-tight"
+          >
             Professional Journey
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            variants={cardVariants}
+            className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto"
+          >
             Building real-world products, growing from intern to developer — all
             at one company I've called home for 2+ years
-          </p>
+          </motion.p>
         </div>
 
         {/* Company header card */}
-        <div className="rounded-2xl border border-white/10 bg-linear-to-r from-cyan-500/10 to-blue-500/10 p-6 backdrop-blur mb-10">
+        <motion.div
+          variants={cardVariants}
+          className="rounded-2xl border border-white/10 bg-linear-to-r from-cyan-500/10 to-blue-500/10 p-6 backdrop-blur mb-10"
+        >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 flex items-center justify-center shadow-lg overflow-hidden border border-white/20">
@@ -171,16 +235,23 @@ const Experience = () => {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-blue-500/30 to-transparent hidden md:block" />
+          <div
+            ref={lineRef}
+            className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500 via-blue-500 to-transparent hidden md:block origin-top"
+          />
 
           <div className="space-y-8">
             {roles.map((role, index) => (
-              <div key={index} className="relative md:pl-16">
+              <motion.div
+                variants={cardVariants}
+                key={index}
+                className="relative md:pl-16"
+              >
                 {/* Timeline dot */}
                 <div className="absolute left-4 top-8 hidden md:flex items-center justify-center">
                   <div className="w-5 h-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 ring-4 ring-background shadow-lg shadow-cyan-500/30" />
@@ -300,11 +371,11 @@ const Experience = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
